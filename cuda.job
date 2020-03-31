@@ -1,0 +1,21 @@
+############################################################
+##   Queue a single job running Python using a GPU
+############################################################
+
+# Assigned GPU device is from environment: $CUDA_VISIBLE_DEVICES
+# Requested CPU count is from environment: $OMP_NUM_THREADS
+
+universe = vanilla
+executable = run_py.sh
+arguments = my_script.py --device=$(AssignedGPUs)
+environment = "PYENV=~/my_venv"
+request_GPUs = 1
+request_cpus = 4
+request_memory = 10GB
+Getenv     = false
+
+Output     = output.log
+Error      = error.log
+Log        = condor.log
+
+queue
