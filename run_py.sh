@@ -47,5 +47,5 @@ cleanup() {
 # Main script
 prepare
 loadenv
-python $@
+python -u $@
 cleanup

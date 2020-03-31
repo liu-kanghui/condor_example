@@ -7,15 +7,15 @@
 
 universe = vanilla
 executable = run_py.sh
-arguments = my_script.py --device=$(AssignedGPUs)
-environment = "PYENV=~/my_venv"
+arguments = main.py
+environment = "PYENV=/research/wehrwein/liuk5/condor_example/my_env"
 request_GPUs = 1
 request_cpus = 4
 request_memory = 10GB
 Getenv     = false
 
-Output     = output.log
-Error      = error.log
-Log        = condor.log
+Output     = log/output.log
+Error      = log/error.log
+Log        = log/condor.log
 
 queue
