@@ -10,8 +10,17 @@ Example to run python main.py on the cluster
 `cd condor_example`
 `mkdir log`
 
-4. ssh to the head cluster 
+4. create virtual-env called my_env 
+ `python3 -m venv my_env`
+
+5. activate the vurutal env
+`source my_env/bin/activate`
+
+6. install numpy package 
+`pip install numpy`
+
+7. ssh to the head cluster 
  `ssh csci-head.cluster.cs.wwu.edu -p 922`
 
-5. submit the job
+8. submit the job
 `condor_submit cuda.job`
